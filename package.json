@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@storybook/addons": "^7.6.17",
     "@storybook/builder-webpack5": "^8.6.0",
     "@storybook/core": "^8.6.6",
     "@tailwindcss/cli": "^4.0.0",

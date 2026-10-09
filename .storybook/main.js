@@ -27,8 +27,7 @@ const config = {
       }
     },
     '@storybook/addon-links',
-    "@storybook/addon-interactions",
-     "@storybook/addon-toolbars"
+    "@storybook/addon-interactions"
   ],
   framework: {
     name: "@storybook/html-vite",

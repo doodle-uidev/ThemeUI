@@ -2,21 +2,16 @@
 import 'flowbite';
 import { initAccordions, initModals, initDropdowns,  } from 'flowbite';
 import '../src/main/resources/static/css/common/output.css';
-import { addons } from '@storybook/addons';
-import { themes } from '@storybook/theming';
-
 export const decorators = [
   (Story, context) => {
     const story = Story();
 
-    // 다크 모드 설정 이동
+    // 다크 모드 설정 이동 (Tailwind 다크 모드 클래스 연동)
     const html = document.documentElement;
     if (context.globals.theme === 'dark') {
       html.classList.add('dark');
-      addons.setConfig({ theme: themes.dark });
     } else {
       html.classList.remove('dark');
-      addons.setConfig({ theme: themes.light });
     }
 
     // Flowbite 초기화
