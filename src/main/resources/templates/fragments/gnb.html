@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <header th:fragment="gnb" class="p-4 gnb">
+        <div class="flex items-center justify-between h-full">
+            <div class="flex items-center">
+                <div class="header-title-block">
+                    <a href="/main"><h1 class="text-blue-700 pr-title">WINHUB</h1></a>
+                </div>
+                <button id="toggleSidebar" data-tooltip-target="tooltip-menu-fold" data-tooltip-style="light" data-tooltip-placement="right" class="p-2 text-gray-400 toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div id="tooltip-menu-fold" role="tooltip" class="absolute invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 z-1000 tooltip">
+                    메뉴 접기
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <!-- GNB-search -->
+                <form class="max-w-md mx-auto">
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative gnb-search">
+                        <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-700" placeholder="Search.." required />
+                    </div>
+                </form>
+                <div class="flex items-center mr-2 user-info">
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="ml-3">
+                        <span class="ml-1 font-bold text-blue-700">James</span>
+                        <span class="ml-1 text-sm">12.25 11:20</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 gnb-btn-group">
+                    <button class="button-type-gnb">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </button>
+                    <button class="button-type-gnb">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html> 

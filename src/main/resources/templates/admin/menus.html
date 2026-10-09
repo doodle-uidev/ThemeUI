@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}">
+<head>
+    <title>메뉴 관리</title>
+</head>
+<body> 
+    <div layout:fragment="content"> 
+        <div class="dashboard-card"> 
+            <div> 
+                <!-- Combined Search and Button Row -->      
+                <div class="flex flex-col justify-between mb-2 md:flex-row">      
+                    <div class="flex gap-1 md:mb-2">     
+                        <input type="text" id="searchMenuName" placeholder="메뉴명" class=" text-sm text-gray-900 border border-gray-300 rounded-md bg-gray-50 focus:ring-blue-500 focus:border-blue-700">
+                        <input type="text" id="searchMenuCode" placeholder="메뉴코드" class="text-sm text-gray-900 border border-gray-300 rounded-md bg-gray-50 focus:ring-blue-500 focus:border-blue-700">
+                        <span th:replace="~{fragments/component :: buttonTA(label='조회', size='small', id='searchBtn', icon='fa-solid fa-magnifying-glass', type='default', color='white',disabled=false)}"></span>
+                    </div>       
+                    <div class="button-group flex gap-1">            
+                        <!-- 아이콘+텍스트 버튼 예시 -->     
+                        <span th:replace="~{fragments/component :: buttonTA(label='추가', size='small', id='addMenuBtn', icon='fa-solid fa-plus', type='primary', color='white', disabled=false)}"></span>
+                        <span th:replace="~{fragments/component :: buttonTA(label='삭제', size='small', id='deleteMenuBtn', icon='fa-solid fa-minus', type='default', color='white', disabled=false)}"></span>
+                        <span th:replace="~{fragments/component :: buttonTA(label='저장', size='small', id='saveMenuBtn', icon='fa-solid fa-pen-to-square', type='default', color='blue', disabled=false)}"></span>
+                        <span th:replace="~{fragments/component :: buttonTA(label='Disabled', size='small', id='deleteMenuBtn', icon='', type='default', color='red', disabled=true)}"></span>
+
+                    </div>        
+                </div>   
+            </div> 
+            <div id="menuGrid" class="ag-theme-quartz" style="height: 500px; width: 100%;"></div>
+        </div>    
+    </div>  
+           
+    <!-- 페이지별 추가 스크립트 -->  
+    <th:block layout:fragment="script">
+        <script src="/js/admin/menus.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('메뉴 관리 페이지가 로드되었습니다.');  
+            });
+      
+        </script>
+    </th:block>   
+</body> 
+</html>    

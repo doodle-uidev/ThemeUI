@@ -1,0 +1,1 @@
+// 공통 JavaScript 함수들 

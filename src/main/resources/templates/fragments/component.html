@@ -1,0 +1,65 @@
+<!-- fragments/component.html -->
+
+<!-- Button TA -->
+<span th:fragment="buttonTA(label, size, id, icon, type, color, disabled)">
+  <!--  
+  label    : 버튼에 표시될 텍스트  
+  size     : 버튼 크기 (small, medium, large)  
+  id       : 버튼의 HTML id 속성  
+  icon     : 아이콘 클래스 (예: 'fa fa-plus')  ※ 아이콘 없을 땐 'null' 입력 or 공백  
+  type     : 버튼의 타입 (예: 'button', 'submit', 'reset') → 현재는 사용되지 않음  
+  color    : 버튼의 기본 색상 (예: 'blue', 'red', 'cus-primary' 등). 미입력 시 기본 white  
+  disabled : 버튼 비활성화 여부 (예: true, false)
+  -->
+  <span th:with="
+      textSize = ${size} == 'small' ? 'text-sm' : (${size} == 'large' ? 'text-lg' : 'text-base'),
+      borderRadius = ${size} == 'small' ? 'rounded-sm' : (${size} == 'large' ? 'rounded-lg' : 'rounded-md'),
+      baseColor = ${color} != null ? ${color} : 'white',
+      hoverColor = (${color} == null or ${color} == 'white') ? '100' : '500',
+      focusColor = (${color} == null or ${color} == 'white') ? '300' : '700',
+      borderColor = (${color} == null or ${color} == 'white') ? 'gray-100' : '500',
+      focusRing = (${color} == null or ${color} == 'white') ? 'gray-200' : '300',
+      textColor = (${color} == null or ${color} == 'white') ? 'text-gray-800' : 'text-white',
+      disableStyle = (${disabled} == true) ? 'opacity-55' : '',
+      cursorClass = (${disabled} == true) ? 'cursor-not-allowed' : 'cursor-pointer'
+  ">
+      <button th:id="${id}"
+              th:data-color="${baseColor}" 
+              th:disabled="${disabled == true}"
+              th:attr="style=${disabled}==true ? 'cursor: not-allowed;' : null"
+              th:class="${baseColor == 'white' 
+                  ? 'px-3 py-2 border ' + textColor + ' ' + textSize + ' ' + borderRadius + ' focus:outline-none bg-white hover:bg-gray-100 focus:bg-white border-gray-300 focus:ring-3 focus:ring-gray-200 ' + disableStyle + ' ' + cursorClass
+                  : 'px-3 py-2 border text-white ' + textSize + ' ' + borderRadius + ' focus:outline-none ' + disableStyle + ' ' +
+                      (baseColor.startsWith('cus-') 
+                          ? 'bg-' + baseColor + '-600 hover:bg-' + baseColor + '-500 focus:bg-' + baseColor + '-700 border-' + baseColor + '-500 focus:ring-3 focus:ring-' + baseColor + '-300'
+                          : 'bg-' + baseColor + '-600 hover:bg-' + baseColor + '-' + hoverColor + ' focus:bg-' + baseColor + '-' + focusColor + ' border-' + baseColor + '-' + borderColor + ' focus:ring-3 focus:ring-' + baseColor + '-' + focusRing) + ' ' + disableStyle + ' ' + cursorClass}">
+          <span th:if="${icon != null and icon != 'null' and icon != ''}" 
+                th:class="${icon + ' mr-1 ' + disableStyle + ' ' + cursorClass}" 
+                th:data-icon="${icon}"></span>
+          <span th:text="${label}" th:class="${disableStyle + ' ' + cursorClass}"></span>
+      </button>
+  </span>
+</span>
+
+
+<!-- File: fragments/tabs.html -->
+<div th:fragment="tabsComponent(baseColor, tabHeaders, tabContents)">
+    <!-- 탭 헤더 영역 -->
+    <div class="mb-4 border-b" 
+        th:classappend="' border-' + ${baseColor} + '-200 dark:border-' + ${baseColor} + '-700'">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" 
+        th:classappend="' text-' + ${baseColor} + '-500 dark:text-' + ${baseColor} + '-400'"
+        id="tabs-example" role="tablist">
+        <!-- 외부에서 전달받은 헤더 프래그먼트 삽입 -->
+        <th:block th:replace="${tabHeaders}"></th:block>
+    </ul>
+    </div>
+    <!-- 탭 컨텐츠 영역 -->
+    <div id="tabContentExample">
+    <!-- 외부에서 전달받은 컨텐츠 프래그먼트 삽입 -->
+    <th:block th:replace="${tabContents}"></th:block>
+    </div>
+</div>
+  
+
+

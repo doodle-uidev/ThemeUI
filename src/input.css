@@ -1,0 +1,519 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* @import "tailwindcss/preflight"; */
+
+/* src/input.css */ 
+/* src/input.css */
+/* src/input.css */ 
+
+/* @import "./preflight.css" layer(base); 
+@import "./utilities.css" layer(utilities); */
+
+ 
+/* 기본 스타일 초기화만 가져옵니다 */
+/* @import "tailwindcss/preflight";  */
+@layer theme, base, components, utilities;
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+@import 'flowbite';
+@import "tailwindcss";
+@import "./main/resources/static/css/common/default.css"; 
+/* Change Autocomplete styles in Chrome*/
+@custom-variant dark (&:where(.dark, .dark *));
+/* 다크 모드 배경 색상 */
+html.dark body .sb-anchor > div,
+html.dark body.sb-show-main.sb-main-padded{
+  background-color: #121212; /* 어두운 배경 색상 */
+}
+button {
+  box-sizing: border-box;
+}
+@theme {
+/* custom-color-setting: primary */
+  --color-primary-50: #35ff71;
+  --color-primary-100: #42ff7a;
+  --color-primary-200: #5bff8c;
+  --color-primary-300: #75ff9e;
+  --color-primary-400: #8effb0;
+  --color-primary-500: #00a832;
+  --color-primary-600: #008929;
+  --color-primary-700: #006b20;
+  --color-primary-800: #004c17;
+  --color-primary-900: #002e0e;
+  --color-primary-950: #001e09;
+/* custom-color-setting: secondary */
+  --color-secondary-50: #f8f2f6;
+  --color-secondary-100: #fcfbfc;
+  --color-secondary-200: #ffffff;
+  --color-secondary-300: #ffffff;
+  --color-secondary-400: #ffffff;
+  --color-secondary-500: #C599B6;
+  --color-secondary-600: #ba85a8;
+  --color-secondary-700: #af729a;
+  --color-secondary-800: #a45e8c;
+  --color-secondary-900: #91527c;
+  --color-secondary-950: #874d73;
+/* custom-color-setting: custom-green */
+  --color-custom-green-50: #95dc95;
+  --color-custom-green-100: #9fdf9f;
+  --color-custom-green-200: #b2e5b2;
+  --color-custom-green-300: #c5ecc5;
+  --color-custom-green-400: #d8f2d8;
+  --color-custom-green-500: #39ac39;
+  --color-custom-green-600: #319531;
+  --color-custom-green-700: #2a7e2a;
+  --color-custom-green-800: #226722;
+  --color-custom-green-900: #1b501b;
+  --color-custom-green-950: #174517;
+/* custom-color-setting: custom-blue */
+  --color-custom-blue-50: #9595dc;
+  --color-custom-blue-100: #9f9fdf;
+  --color-custom-blue-200: #b2b2e5;
+  --color-custom-blue-300: #c5c5ec;
+  --color-custom-blue-400: #d8d8f2;
+  --color-custom-blue-500: #3939ac;
+  --color-custom-blue-600: #313195;
+  --color-custom-blue-700: #2a2a7e;
+  --color-custom-blue-800: #222267;
+  --color-custom-blue-900: #1b1b50;
+  --color-custom-blue-950: #171745;
+/* custom-color-setting: custom-red */
+  --color-custom-red-50: #dc9595;
+  --color-custom-red-100: #df9f9f;
+  --color-custom-red-200: #e5b2b2;
+  --color-custom-red-300: #ecc5c5;
+  --color-custom-red-400: #f2d8d8;
+  --color-custom-red-500: #ac3939;
+  --color-custom-red-600: #953131;
+  --color-custom-red-700: #7e2a2a;
+  --color-custom-red-800: #672222;
+  --color-custom-red-900: #501b1b;
+  --color-custom-red-950: #451717;
+/* custom-color-setting: custom-test */
+  --color-custom-test-50: #ef7ea7;
+  --color-custom-test-100: #f089ae;
+  --color-custom-test-200: #f39fbe;
+  --color-custom-test-300: #f6b6cd;
+  --color-custom-test-400: #f9cddd;
+  --color-custom-test-500: #c71958;
+  --color-custom-test-600: #ac164c;
+  --color-custom-test-700: #911240;
+  --color-custom-test-800: #750f34;
+  --color-custom-test-900: #5a0b28;
+  --color-custom-test-950: #4d0a22;
+/* custom-color-setting: custom-violet */
+  --color-custom-violet-50: #aa9fce;
+  --color-custom-violet-100: #b2a7d2;
+  --color-custom-violet-200: #c1b8db;
+  --color-custom-violet-300: #cfc9e3;
+  --color-custom-violet-400: #dedaec;
+  --color-custom-violet-500: #5e4c94;
+  --color-custom-violet-600: #514280;
+  --color-custom-violet-700: #44376c;
+  --color-custom-violet-800: #372d57;
+  --color-custom-violet-900: #2b2243;
+  --color-custom-violet-950: #241d39;
+/* custom-color-setting: custom-indigo */
+  --color-custom-indigo-50: #b995dc;
+  --color-custom-indigo-100: #bf9fdf;
+  --color-custom-indigo-200: #ccb2e5;
+  --color-custom-indigo-300: #d9c5ec;
+  --color-custom-indigo-400: #e5d8f2;
+  --color-custom-indigo-500: #7339ac;
+  --color-custom-indigo-600: #643195;
+  --color-custom-indigo-700: #542a7e;
+  --color-custom-indigo-800: #452267;
+  --color-custom-indigo-900: #361b50;
+  --color-custom-indigo-950: #2e1745;
+/* custom-color-setting: custom-pink */
+  --color-custom-pink-50: #ce9fc2;
+  --color-custom-pink-100: #d2a7c7;
+  --color-custom-pink-200: #dbb8d2;
+  --color-custom-pink-300: #e3c9dd;
+  --color-custom-pink-400: #ecdae7;
+  --color-custom-pink-500: #944c82;
+  --color-custom-pink-600: #804270;
+  --color-custom-pink-700: #6c375e;
+  --color-custom-pink-800: #572d4d;
+  --color-custom-pink-900: #43223b;
+  --color-custom-pink-950: #391d32;
+/* custom-color-setting: custom-teal */
+  --color-custom-teal-50: #95dcdc;
+  --color-custom-teal-100: #9fdfdf;
+  --color-custom-teal-200: #b2e5e5;
+  --color-custom-teal-300: #c5ecec;
+  --color-custom-teal-400: #d8f2f2;
+  --color-custom-teal-500: #39acac;
+  --color-custom-teal-600: #319595;
+  --color-custom-teal-700: #2a7e7e;
+  --color-custom-teal-800: #226767;
+  --color-custom-teal-900: #1b5050;
+  --color-custom-teal-950: #174545;
+/* custom-color-setting: custom-orange */
+  --color-custom-orange-50: #dcb995;
+  --color-custom-orange-100: #dfbf9f;
+  --color-custom-orange-200: #e5ccb2;
+  --color-custom-orange-300: #ecd9c5;
+  --color-custom-orange-400: #f2e5d8;
+  --color-custom-orange-500: #ac7339;
+  --color-custom-orange-600: #956431;
+  --color-custom-orange-700: #7e542a;
+  --color-custom-orange-800: #674522;
+  --color-custom-orange-900: #50361b;
+  --color-custom-orange-950: #452e17;
+/* custom-color-setting: custom-rose */
+  --color-custom-rose-50: #ce9fb6;
+  --color-custom-rose-100: #d2a7bc;
+  --color-custom-rose-200: #dbb8c9;
+  --color-custom-rose-300: #e3c9d6;
+  --color-custom-rose-400: #ecdae3;
+  --color-custom-rose-500: #944c70;
+  --color-custom-rose-600: #804261;
+  --color-custom-rose-700: #6c3751;
+  --color-custom-rose-800: #572d42;
+  --color-custom-rose-900: #432233;
+  --color-custom-rose-950: #391d2b;
+/* custom-color-setting: custom-red-orange */
+  --color-custom-red-orange-50: #ceaa9f;
+  --color-custom-red-orange-100: #d2b2a7;
+  --color-custom-red-orange-200: #dbc1b8;
+  --color-custom-red-orange-300: #e3cfc9;
+  --color-custom-red-orange-400: #ecdeda;
+  --color-custom-red-orange-500: #945e4c;
+  --color-custom-red-orange-600: #805142;
+  --color-custom-red-orange-700: #6c4437;
+  --color-custom-red-orange-800: #57372d;
+  --color-custom-red-orange-900: #432b22;
+  --color-custom-red-orange-950: #39241d;
+/* custom-color-setting: custom-yellow-orange */
+  --color-custom-yellow-orange-50: #cec29f;
+  --color-custom-yellow-orange-100: #d2c7a7;
+  --color-custom-yellow-orange-200: #dbd2b8;
+  --color-custom-yellow-orange-300: #e3ddc9;
+  --color-custom-yellow-orange-400: #ece7da;
+  --color-custom-yellow-orange-500: #94824c;
+  --color-custom-yellow-orange-600: #807042;
+  --color-custom-yellow-orange-700: #6c5e37;
+  --color-custom-yellow-orange-800: #574d2d;
+  --color-custom-yellow-orange-900: #433b22;
+  --color-custom-yellow-orange-950: #39321d;
+/* custom-color-setting: custom-yellow */
+  --color-custom-yellow-50: #dcdc95;
+  --color-custom-yellow-100: #dfdf9f;
+  --color-custom-yellow-200: #e5e5b2;
+  --color-custom-yellow-300: #ececc5;
+  --color-custom-yellow-400: #f2f2d8;
+  --color-custom-yellow-500: #acac39;
+  --color-custom-yellow-600: #959531;
+  --color-custom-yellow-700: #7e7e2a;
+  --color-custom-yellow-800: #676722;
+  --color-custom-yellow-900: #50501b;
+  --color-custom-yellow-950: #454517;
+/* custom-color-setting: custom-yellow-green */
+  --color-custom-yellow-green-50: #c2ce9f;
+  --color-custom-yellow-green-100: #c7d2a7;
+  --color-custom-yellow-green-200: #d2dbb8;
+  --color-custom-yellow-green-300: #dde3c9;
+  --color-custom-yellow-green-400: #e7ecda;
+  --color-custom-yellow-green-500: #82944c;
+  --color-custom-yellow-green-600: #708042;
+  --color-custom-yellow-green-700: #5e6c37;
+  --color-custom-yellow-green-800: #4d572d;
+  --color-custom-yellow-green-900: #3b4322;
+  --color-custom-yellow-green-950: #32391d;
+/* custom-color-setting: custom-spring-green */
+  --color-custom-spring-green-50: #aace9f;
+  --color-custom-spring-green-100: #b2d2a7;
+  --color-custom-spring-green-200: #c1dbb8;
+  --color-custom-spring-green-300: #cfe3c9;
+  --color-custom-spring-green-400: #deecda;
+  --color-custom-spring-green-500: #5e944c;
+  --color-custom-spring-green-600: #518042;
+  --color-custom-spring-green-700: #446c37;
+  --color-custom-spring-green-800: #37572d;
+  --color-custom-spring-green-900: #2b4322;
+  --color-custom-spring-green-950: #24391d;
+/* custom-color-setting: custom-cyan */
+  --color-custom-cyan-50: #95b9dc;
+  --color-custom-cyan-100: #9fbfdf;
+  --color-custom-cyan-200: #b2cce5;
+  --color-custom-cyan-300: #c5d9ec;
+  --color-custom-cyan-400: #d8e5f2;
+  --color-custom-cyan-500: #3973ac;
+  --color-custom-cyan-600: #316495;
+  --color-custom-cyan-700: #2a547e;
+  --color-custom-cyan-800: #224567;
+  --color-custom-cyan-900: #1b3650;
+  --color-custom-cyan-950: #172e45;
+/* custom-color-setting: custom-turquoise */
+  --color-custom-turquoise-50: #9fceaa;
+  --color-custom-turquoise-100: #a7d2b2;
+  --color-custom-turquoise-200: #b8dbc1;
+  --color-custom-turquoise-300: #c9e3cf;
+  --color-custom-turquoise-400: #daecde;
+  --color-custom-turquoise-500: #4c945e;
+  --color-custom-turquoise-600: #428051;
+  --color-custom-turquoise-700: #376c44;
+  --color-custom-turquoise-800: #2d5737;
+  --color-custom-turquoise-900: #22432b;
+  --color-custom-turquoise-950: #1d3924;
+/* custom-color-setting: custom-light-blue-green */
+  --color-custom-light-blue-green-50: #9fceb6;
+  --color-custom-light-blue-green-100: #a7d2bc;
+  --color-custom-light-blue-green-200: #b8dbc9;
+  --color-custom-light-blue-green-300: #c9e3d6;
+  --color-custom-light-blue-green-400: #daece3;
+  --color-custom-light-blue-green-500: #4c9470;
+  --color-custom-light-blue-green-600: #428061;
+  --color-custom-light-blue-green-700: #376c51;
+  --color-custom-light-blue-green-800: #2d5742;
+  --color-custom-light-blue-green-900: #224333;
+  --color-custom-light-blue-green-950: #1d392b;
+/* custom-color-setting: custom-light-cyan */
+  --color-custom-light-cyan-50: #9fcec2;
+  --color-custom-light-cyan-100: #a7d2c7;
+  --color-custom-light-cyan-200: #b8dbd2;
+  --color-custom-light-cyan-300: #c9e3dd;
+  --color-custom-light-cyan-400: #daece7;
+  --color-custom-light-cyan-500: #4c9482;
+  --color-custom-light-cyan-600: #428070;
+  --color-custom-light-cyan-700: #376c5e;
+  --color-custom-light-cyan-800: #2d574d;
+  --color-custom-light-cyan-900: #22433b;
+  --color-custom-light-cyan-950: #1d3932;
+/* custom-color-setting: custom-light-blue */
+  --color-custom-light-blue-50: #9fcecc;
+  --color-custom-light-blue-100: #a7d2d1;
+  --color-custom-light-blue-200: #b8dbda;
+  --color-custom-light-blue-300: #c9e3e2;
+  --color-custom-light-blue-400: #daeceb;
+  --color-custom-light-blue-500: #4c9492;
+  --color-custom-light-blue-600: #42807e;
+  --color-custom-light-blue-700: #376c6a;
+  --color-custom-light-blue-800: #2d5756;
+  --color-custom-light-blue-900: #224342;
+  --color-custom-light-blue-950: #1d3938;
+/* custom-color-setting: custom-aqua */
+  --color-custom-aqua-50: #9fcece;
+  --color-custom-aqua-100: #a7d2d2;
+  --color-custom-aqua-200: #b8dbdb;
+  --color-custom-aqua-300: #c9e3e3;
+  --color-custom-aqua-400: #daecec;
+  --color-custom-aqua-500: #4c9494;
+  --color-custom-aqua-600: #428080;
+  --color-custom-aqua-700: #376c6c;
+  --color-custom-aqua-800: #2d5757;
+  --color-custom-aqua-900: #224343;
+  --color-custom-aqua-950: #1d3939;
+/* custom-color-setting: custom-sky-blue */
+  --color-custom-sky-blue-50: #9fc2ce;
+  --color-custom-sky-blue-100: #a7c7d2;
+  --color-custom-sky-blue-200: #b8d2db;
+  --color-custom-sky-blue-300: #c9dde3;
+  --color-custom-sky-blue-400: #dae7ec;
+  --color-custom-sky-blue-500: #4c8294;
+  --color-custom-sky-blue-600: #427080;
+  --color-custom-sky-blue-700: #375e6c;
+  --color-custom-sky-blue-800: #2d4d57;
+  --color-custom-sky-blue-900: #223b43;
+  --color-custom-sky-blue-950: #1d3239;
+/* custom-color-setting: custom-dark-blue */
+  --color-custom-dark-blue-50: #9f9fce;
+  --color-custom-dark-blue-100: #a7a7d2;
+  --color-custom-dark-blue-200: #b8b8db;
+  --color-custom-dark-blue-300: #c9c9e3;
+  --color-custom-dark-blue-400: #dadaec;
+  --color-custom-dark-blue-500: #4c4c94;
+  --color-custom-dark-blue-600: #424280;
+  --color-custom-dark-blue-700: #37376c;
+  --color-custom-dark-blue-800: #2d2d57;
+  --color-custom-dark-blue-900: #222243;
+  --color-custom-dark-blue-950: #1d1d39;
+/* custom-color-setting: custom-purple */
+  --color-custom-purple-50: #dc95dc;
+  --color-custom-purple-100: #df9fdf;
+  --color-custom-purple-200: #e5b2e5;
+  --color-custom-purple-300: #ecc5ec;
+  --color-custom-purple-400: #f2d8f2;
+  --color-custom-purple-500: #ac39ac;
+  --color-custom-purple-600: #953195;
+  --color-custom-purple-700: #7e2a7e;
+  --color-custom-purple-800: #672267;
+  --color-custom-purple-900: #501b50;
+  --color-custom-purple-950: #451745;
+/* custom-color-setting: custom-magenta */
+  --color-custom-magenta-50: #dc95b9;
+  --color-custom-magenta-100: #df9fbf;
+  --color-custom-magenta-200: #e5b2cc;
+  --color-custom-magenta-300: #ecc5d9;
+  --color-custom-magenta-400: #f2d8e5;
+  --color-custom-magenta-500: #ac3973;
+  --color-custom-magenta-600: #953164;
+  --color-custom-magenta-700: #7e2a54;
+  --color-custom-magenta-800: #672245;
+  --color-custom-magenta-900: #501b36;
+  --color-custom-magenta-950: #45172e;
+/* custom-color-setting: custom-pink-magenta */
+  --color-custom-pink-magenta-50: #ce9fce;
+  --color-custom-pink-magenta-100: #d2a7d2;
+  --color-custom-pink-magenta-200: #dbb8db;
+  --color-custom-pink-magenta-300: #e3c9e3;
+  --color-custom-pink-magenta-400: #ecdaec;
+  --color-custom-pink-magenta-500: #944c94;
+  --color-custom-pink-magenta-600: #804280;
+  --color-custom-pink-magenta-700: #6c376c;
+  --color-custom-pink-magenta-800: #572d57;
+  --color-custom-pink-magenta-900: #432243;
+  --color-custom-pink-magenta-950: #391d39;
+/* custom-color-setting: custom-salmon */
+  --color-custom-salmon-50: #ce9faa;
+  --color-custom-salmon-100: #d2a7b2;
+  --color-custom-salmon-200: #dbb8c1;
+  --color-custom-salmon-300: #e3c9cf;
+  --color-custom-salmon-400: #ecdade;
+  --color-custom-salmon-500: #944c5e;
+  --color-custom-salmon-600: #804251;
+  --color-custom-salmon-700: #6c3744;
+  --color-custom-salmon-800: #572d37;
+  --color-custom-salmon-900: #43222b;
+  --color-custom-salmon-950: #391d24;
+/* custom-color-setting: custom-dark-salmon */
+  --color-custom-dark-salmon-50: #ce9f9f;
+  --color-custom-dark-salmon-100: #d2a7a7;
+  --color-custom-dark-salmon-200: #dbb8b8;
+  --color-custom-dark-salmon-300: #e3c9c9;
+  --color-custom-dark-salmon-400: #ecdada;
+  --color-custom-dark-salmon-500: #944c4c;
+  --color-custom-dark-salmon-600: #804242;
+  --color-custom-dark-salmon-700: #6c3737;
+  --color-custom-dark-salmon-800: #572d2d;
+  --color-custom-dark-salmon-900: #432222;
+  --color-custom-dark-salmon-950: #391d1d;
+
+/* custom-color-setting: custom-lime */
+  --color-custom-lime-50: #b9dc95;
+  --color-custom-lime-100: #bfdf9f;
+  --color-custom-lime-200: #cce5b2;
+  --color-custom-lime-300: #d9ecc5;
+  --color-custom-lime-400: #e5f2d8;
+  --color-custom-lime-500: #73ac39;
+  --color-custom-lime-600: #649531;
+  --color-custom-lime-700: #547e2a;
+  --color-custom-lime-800: #456722;
+  --color-custom-lime-900: #36501b;
+  --color-custom-lime-950: #2e4517;
+
+}
+
+@layer components { 
+  .custom-submenu {
+    @apply hidden max-h-0 overflow-hidden hidden transition-[max-height] ease-[var(--transition-speed)] bg-[#f1f4fa];
+  }
+
+  .custom-submenu.custom-open {
+    @apply block visible max-h-[500px];
+  }
+
+  .custom-submenu.custom-open + .nav-linked .custom-icon i {
+    @apply rotate-90 transition-transform duration-300 ease-out;
+  }
+
+  .custom-submenu-item {
+    @apply relative p-3 text-gray-600 text-sm cursor-pointer transition-colors duration-300 ease-in-out;
+  }
+
+  .custom-submenu-item:hover {
+    @apply hover:bg-custom-blue-50 hover:text-custom-blue-600;
+  }
+
+  .custom-submenu-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--before-width, 4px);
+    height: var(--before-height, 0%);
+    background-color: var(--menu-color-before, #3b82f6); /* 기본 색상 */
+    transition: var(--before-transition, all 0.2s);
+  }
+
+  .custom-submenu-item:hover::before {
+    height: 100%;
+  }
+
+  .custom-submenu-item.custom-active {
+    background-color: #e8edf9;
+  }
+
+  .custom-submenu-item.custom-active:hover {
+    background-color: #e8edf9;
+  }
+
+  .custom-submenu-item.custom-active::before {
+    @apply h-full;
+  }
+
+  .custom-icon {
+    @apply inline-block ml-2 transition-transform duration-300 ease-in-out;
+  }
+  /* .custom-active {
+    @apply bg-sky-500 text-white; 
+  }
+  .custom-active:hover {
+    @apply bg-sky-500 text-white; 
+  } */
+  .custom-icon i {
+    @apply rotate-0;
+  }
+  .custom-submenu-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--before-width, 4px);
+    height: var(--before-height, 0%);
+    background-color: var(--menu-color-before, #3b82f6); /* 기본 색상 */
+    transition: var(--before-transition, all 0.2s);
+  }
+  
+  .custom-submenu-item:hover::before {
+    height: 100%;
+  }
+  .custom-icon i.custom-rotate-90 {
+    @apply rotate-90;
+  }
+}
+
+/* GNB BUtton Common Style */
+.button-type-gnb {
+  @apply px-2 py-1 bg-white border-white rounded-md hover:bg-gray-100 hover:border-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300;
+}
+ 
+.button-grid-control {
+  @apply px-3 py-2 text-sm bg-white border border-gray-300 rounded-sm hover:bg-gray-100 hover:border-gray-200 focus:border-gray-300 focus:outline-none focus:bg-white focus:ring-4 focus:ring-gray-100;
+}
+
+/* .button-grid-control2 {
+  @apply px-3 py-2 text-sm text-white border rounded-sm bg-custom-500 border-custom-300 hover:bg-custom-400 hover:border-custom-200 focus:border-custom-300 focus:outline-none focus:bg-custom-600 focus:ring-2 focus:ring-custom-300;
+} */
+
+/* stroybook - container darkmode assignment */
+
+.sb-unstyled [type="checkbox"],
+.sb-unstyled [type="checkbox"]:focus,
+.sb-unstyled [type="checkbox"]:checked{
+  box-shadow: initial !important;
+  background-color: initial !important;
+  border-color: initial !important;
+}
+.sb-unstyled label,
+.sb-unstyled label:focus,
+.sb-unstyled label:checked {
+  box-shadow: none !important;
+}
+
+.sb-unstyled input[type=checkbox]:checked, .sb-unstyled input[type=radio]:checked, .sb-unstyled .dark input[type=checkbox]:checked, .sb-unstyled .dark input[type=radio]:checked {
+  background-color: initial !important;
+  border-color: initial !important;
+}

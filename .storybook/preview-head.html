@@ -1,0 +1,79 @@
+<!-- <link rel="stylesheet" href="/css/common/output.css"> -->
+
+<!-- <link rel="stylesheet" href="/dist/output.css"> -->
+<script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<style>
+  html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+  #storybook-root {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  /* Storybook Controls 패널 내부의 Switch 토글 및 인풋 스타일 오염 방지 */
+  input[role="switch"],
+  input[role="switch"]:checked,
+  input[role="switch"]:focus,
+  input[role="switch"]:active,
+  .docblock-argstable input[role="switch"],
+  .docblock-argstable input[role="switch"]:checked,
+  .docblock-argstable input[role="switch"]:focus,
+  .docblock-argstable input[role="switch"]:active,
+  [class*="docblock"] input[role="switch"],
+  [class*="docblock"] input[role="switch"]:checked,
+  .sb-unstyled input[role="switch"],
+  .sb-unstyled input[role="switch"]:checked,
+  label[for*="control-"] input[type="checkbox"],
+  label[for*="control-"] input[type="checkbox"]:checked,
+  input[id^="control-"][role="switch"],
+  input[id^="control-"][role="switch"]:checked {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    pointer-events: none !important;
+  }
+
+  /* Storybook Controls 라디오 및 체크박스 보호 (Controls 아규먼트 테이블 내에서만 적용) */
+  .docblock-argstable input[type="radio"],
+  .docblock-argstable input[type="checkbox"] {
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+  }
+
+  /* 커스텀 컴포넌트 내부의 접근성용 숨김 인풋은 캔버스에서 항상 100% 완전 격리 */
+  input.sr-only,
+  .sr-only {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border-width: 0 !important;
+    opacity: 0 !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    pointer-events: none !important;
+  }
+</style>
