@@ -1,56 +1,332 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
   "version": "1.0.0",
-  "description": "Figma Design System Tokens for ThemeUI",
   "color": {
-    "primary": {
-      "base": { "value": "#2563eb", "type": "color" },
-      "50": { "value": "#eff6ff", "type": "color" },
-      "100": { "value": "#dbeafe", "type": "color" },
-      "200": { "value": "#bfdbfe", "type": "color" },
-      "300": { "value": "#93c5fd", "type": "color" },
-      "400": { "value": "#60a5fa", "type": "color" },
-      "500": { "value": "#3b82f6", "type": "color" },
-      "600": { "value": "#2563eb", "type": "color" },
-      "700": { "value": "#1d4ed8", "type": "color" },
-      "800": { "value": "#1e40af", "type": "color" },
-      "900": { "value": "#1e3a8a", "type": "color" },
-      "950": { "value": "#172554", "type": "color" }
+    "darkgreen": {
+      "50": {
+        "value": "#0dff0d",
+        "type": "color"
+      },
+      "100": {
+        "value": "#1aff1a",
+        "type": "color"
+      },
+      "200": {
+        "value": "#33ff33",
+        "type": "color"
+      },
+      "300": {
+        "value": "#4dff4d",
+        "type": "color"
+      },
+      "400": {
+        "value": "#66ff66",
+        "type": "color"
+      },
+      "500": {
+        "value": "#008000",
+        "type": "color"
+      },
+      "600": {
+        "value": "#006100",
+        "type": "color"
+      },
+      "700": {
+        "value": "#004300",
+        "type": "color"
+      },
+      "800": {
+        "value": "#002400",
+        "type": "color"
+      },
+      "900": {
+        "value": "#000600",
+        "type": "color"
+      },
+      "950": {
+        "value": "#000000",
+        "type": "color"
+      }
     },
-    "secondary": {
-      "base": { "value": "#7c3aed", "type": "color" },
-      "50": { "value": "#f5f3ff", "type": "color" },
-      "100": { "value": "#ede9fe", "type": "color" },
-      "200": { "value": "#ddd6fe", "type": "color" },
-      "300": { "value": "#c4b5fd", "type": "color" },
-      "400": { "value": "#a78bfa", "type": "color" },
-      "500": { "value": "#8b5cf6", "type": "color" },
-      "600": { "value": "#7c3aed", "type": "color" },
-      "700": { "value": "#6d28d9", "type": "color" },
-      "800": { "value": "#5b21b6", "type": "color" },
-      "900": { "value": "#4c1d95", "type": "color" },
-      "950": { "value": "#2e1065", "type": "color" }
+    "blue": {
+      "50": {
+        "value": "#89c5fc",
+        "type": "color"
+      },
+      "100": {
+        "value": "#95cbfc",
+        "type": "color"
+      },
+      "200": {
+        "value": "#aed7fd",
+        "type": "color"
+      },
+      "300": {
+        "value": "#c7e3fd",
+        "type": "color"
+      },
+      "400": {
+        "value": "#dfeffe",
+        "type": "color"
+      },
+      "500": {
+        "value": "#0781f1",
+        "type": "color"
+      },
+      "600": {
+        "value": "#0671d3",
+        "type": "color"
+      },
+      "700": {
+        "value": "#0561b5",
+        "type": "color"
+      },
+      "800": {
+        "value": "#045198",
+        "type": "color"
+      },
+      "900": {
+        "value": "#04417a",
+        "type": "color"
+      },
+      "950": {
+        "value": "#03396b",
+        "type": "color"
+      }
     },
-    "neutral": {
-      "base": { "value": "#64748b", "type": "color" },
-      "50": { "value": "#f8fafc", "type": "color" },
-      "100": { "value": "#f1f5f9", "type": "color" },
-      "500": { "value": "#64748b", "type": "color" },
-      "900": { "value": "#0f172a", "type": "color" }
+    "yellow": {
+      "50": {
+        "value": "#fff38c",
+        "type": "color"
+      },
+      "100": {
+        "value": "#fff599",
+        "type": "color"
+      },
+      "200": {
+        "value": "#fff7b3",
+        "type": "color"
+      },
+      "300": {
+        "value": "#fffacc",
+        "type": "color"
+      },
+      "400": {
+        "value": "#fffce5",
+        "type": "color"
+      },
+      "500": {
+        "value": "#ffe500",
+        "type": "color"
+      },
+      "600": {
+        "value": "#e0ca00",
+        "type": "color"
+      },
+      "700": {
+        "value": "#c2ae00",
+        "type": "color"
+      },
+      "800": {
+        "value": "#a39300",
+        "type": "color"
+      },
+      "900": {
+        "value": "#857700",
+        "type": "color"
+      },
+      "950": {
+        "value": "#756900",
+        "type": "color"
+      }
+    },
+    "black": {
+      "50": {
+        "value": "#464646",
+        "type": "color"
+      },
+      "100": {
+        "value": "#4d4d4d",
+        "type": "color"
+      },
+      "200": {
+        "value": "#595959",
+        "type": "color"
+      },
+      "300": {
+        "value": "#666666",
+        "type": "color"
+      },
+      "400": {
+        "value": "#737373",
+        "type": "color"
+      },
+      "500": {
+        "value": "#000000",
+        "type": "color"
+      },
+      "600": {
+        "value": "#000000",
+        "type": "color"
+      },
+      "700": {
+        "value": "#000000",
+        "type": "color"
+      },
+      "800": {
+        "value": "#000000",
+        "type": "color"
+      },
+      "900": {
+        "value": "#000000",
+        "type": "color"
+      },
+      "950": {
+        "value": "#000000",
+        "type": "color"
+      }
+    },
+    "green": {
+      "50": {
+        "value": "#80de80",
+        "type": "color"
+      },
+      "100": {
+        "value": "#8ae18a",
+        "type": "color"
+      },
+      "200": {
+        "value": "#9ee69e",
+        "type": "color"
+      },
+      "300": {
+        "value": "#b3ebb3",
+        "type": "color"
+      },
+      "400": {
+        "value": "#c7f1c7",
+        "type": "color"
+      },
+      "500": {
+        "value": "#2ba72b",
+        "type": "color"
+      },
+      "600": {
+        "value": "#258f25",
+        "type": "color"
+      },
+      "700": {
+        "value": "#1e761e",
+        "type": "color"
+      },
+      "800": {
+        "value": "#185e18",
+        "type": "color"
+      },
+      "900": {
+        "value": "#124612",
+        "type": "color"
+      },
+      "950": {
+        "value": "#0f390f",
+        "type": "color"
+      }
+    },
+    "red": {
+      "50": {
+        "value": "#ff8c8c",
+        "type": "color"
+      },
+      "100": {
+        "value": "#ff9999",
+        "type": "color"
+      },
+      "200": {
+        "value": "#ffb3b3",
+        "type": "color"
+      },
+      "300": {
+        "value": "#ffcccc",
+        "type": "color"
+      },
+      "400": {
+        "value": "#ffe5e5",
+        "type": "color"
+      },
+      "500": {
+        "value": "#ff0000",
+        "type": "color"
+      },
+      "600": {
+        "value": "#e00000",
+        "type": "color"
+      },
+      "700": {
+        "value": "#c20000",
+        "type": "color"
+      },
+      "800": {
+        "value": "#a30000",
+        "type": "color"
+      },
+      "900": {
+        "value": "#850000",
+        "type": "color"
+      },
+      "950": {
+        "value": "#750000",
+        "type": "color"
+      }
     }
   },
   "borderRadius": {
-    "none": { "value": "0px", "type": "dimension" },
-    "sm": { "value": "2px", "type": "dimension" },
-    "md": { "value": "6px", "type": "dimension" },
-    "lg": { "value": "8px", "type": "dimension" },
-    "full": { "value": "9999px", "type": "dimension" }
-  },
-  "spacing": {
-    "xs": { "value": "4px", "type": "dimension" },
-    "sm": { "value": "8px", "type": "dimension" },
-    "md": { "value": "16px", "type": "dimension" },
-    "lg": { "value": "24px", "type": "dimension" },
-    "xl": { "value": "32px", "type": "dimension" }
+    "sm": {
+      "value": "2px",
+      "type": "dimension"
+    },
+    "md": {
+      "value": "6px",
+      "type": "dimension"
+    },
+    "large": {
+      "value": "12px",
+      "type": "dimension"
+    },
+    "extralarge": {
+      "value": "16px",
+      "type": "dimension"
+    },
+    "circle": {
+      "value": "55px",
+      "type": "dimension"
+    },
+    "popup": {
+      "value": "12px",
+      "type": "dimension"
+    },
+    "label": {
+      "value": "6px",
+      "type": "dimension"
+    },
+    "form": {
+      "value": "8px",
+      "type": "dimension"
+    },
+    "card": {
+      "value": "8px",
+      "type": "dimension"
+    },
+    "btn": {
+      "value": "8px",
+      "type": "dimension"
+    },
+    "box": {
+      "value": "8px",
+      "type": "dimension"
+    },
+    "sm-2": {
+      "value": "4px",
+      "type": "dimension"
+    }
   }
 }

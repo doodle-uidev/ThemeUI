@@ -411,11 +411,95 @@ button {
   --color-neutral-900: #0f172a;
 
 /* figma-radius-settings */
-  --radius-none: 0px;
   --radius-sm: 2px;
   --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-full: 9999px;
+  --radius-large: 12px;
+  --radius-extralarge: 16px;
+  --radius-circle: 55px;
+  --radius-popup: 12px;
+  --radius-label: 6px;
+  --radius-form: 8px;
+  --radius-card: 8px;
+  --radius-btn: 8px;
+  --radius-box: 8px;
+  --radius-sm-2: 4px;
+/* custom-color-setting: darkgreen */
+  --color-darkgreen-50: #0dff0d;
+  --color-darkgreen-100: #1aff1a;
+  --color-darkgreen-200: #33ff33;
+  --color-darkgreen-300: #4dff4d;
+  --color-darkgreen-400: #66ff66;
+  --color-darkgreen-500: #008000;
+  --color-darkgreen-600: #006100;
+  --color-darkgreen-700: #004300;
+  --color-darkgreen-800: #002400;
+  --color-darkgreen-900: #000600;
+  --color-darkgreen-950: #000000;
+
+/* custom-color-setting: blue */
+  --color-blue-50: #89c5fc;
+  --color-blue-100: #95cbfc;
+  --color-blue-200: #aed7fd;
+  --color-blue-300: #c7e3fd;
+  --color-blue-400: #dfeffe;
+  --color-blue-500: #0781f1;
+  --color-blue-600: #0671d3;
+  --color-blue-700: #0561b5;
+  --color-blue-800: #045198;
+  --color-blue-900: #04417a;
+  --color-blue-950: #03396b;
+
+/* custom-color-setting: yellow */
+  --color-yellow-50: #fff38c;
+  --color-yellow-100: #fff599;
+  --color-yellow-200: #fff7b3;
+  --color-yellow-300: #fffacc;
+  --color-yellow-400: #fffce5;
+  --color-yellow-500: #ffe500;
+  --color-yellow-600: #e0ca00;
+  --color-yellow-700: #c2ae00;
+  --color-yellow-800: #a39300;
+  --color-yellow-900: #857700;
+  --color-yellow-950: #756900;
+
+/* custom-color-setting: black */
+  --color-black-50: #464646;
+  --color-black-100: #4d4d4d;
+  --color-black-200: #595959;
+  --color-black-300: #666666;
+  --color-black-400: #737373;
+  --color-black-500: #000000;
+  --color-black-600: #000000;
+  --color-black-700: #000000;
+  --color-black-800: #000000;
+  --color-black-900: #000000;
+  --color-black-950: #000000;
+
+/* custom-color-setting: green */
+  --color-green-50: #80de80;
+  --color-green-100: #8ae18a;
+  --color-green-200: #9ee69e;
+  --color-green-300: #b3ebb3;
+  --color-green-400: #c7f1c7;
+  --color-green-500: #2ba72b;
+  --color-green-600: #258f25;
+  --color-green-700: #1e761e;
+  --color-green-800: #185e18;
+  --color-green-900: #124612;
+  --color-green-950: #0f390f;
+
+/* custom-color-setting: red */
+  --color-red-50: #ff8c8c;
+  --color-red-100: #ff9999;
+  --color-red-200: #ffb3b3;
+  --color-red-300: #ffcccc;
+  --color-red-400: #ffe5e5;
+  --color-red-500: #ff0000;
+  --color-red-600: #e00000;
+  --color-red-700: #c20000;
+  --color-red-800: #a30000;
+  --color-red-900: #850000;
+  --color-red-950: #750000;
 }
 
 @layer components { 

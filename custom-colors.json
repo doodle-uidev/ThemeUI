@@ -12,5 +12,11 @@
   "custom-magenta": "#ac3973",
   "custom-primary": "#3b82f6",
   "custom-secondary": "#8b5cf6",
-  "custom-neutral": "#64748b"
+  "custom-neutral": "#64748b",
+  "darkgreen": "#008000",
+  "blue": "#0781f1",
+  "yellow": "#ffe500",
+  "black": "#000000",
+  "green": "#2ba72b",
+  "red": "#ff0000"
 }
