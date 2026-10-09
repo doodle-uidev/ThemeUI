@@ -26,7 +26,11 @@
     "build-storybook": "storybook build",
     "purgecss": "purgecss --css ./src/main/resources/static/css/common/output.css --content ./src/main/resources/templates/**/*.html --output ./src/main/resources/static/css/common/optimized.css",
     "build-optimized-css": "npm run build-storybook && npm run purgecss",
-    "server": "node server.js"
+    "server": "node server.js",
+    "chromatic": "npx chromatic --project-token=chpt_a1b4a8b61ff6500",
+    "tokens:sync": "node scripts/syncFigmaTokens.js",
+    "tokens:fetch": "node scripts/fetchFigmaTokens.js",
+    "tokens:pipeline": "node scripts/syncFigmaTokens.js && npm run chromatic"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",

@@ -9,5 +9,8 @@
   "custom-blue": "#3939ac",
   "custom-indigo": "#7339ac",
   "custom-purple": "#ac39ac",
-  "custom-magenta": "#ac3973"
+  "custom-magenta": "#ac3973",
+  "custom-primary": "#3b82f6",
+  "custom-secondary": "#8b5cf6",
+  "custom-neutral": "#64748b"
 }

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "version": "1.0.0",
+  "description": "Figma Design System Tokens for ThemeUI",
+  "color": {
+    "primary": {
+      "base": { "value": "#2563eb", "type": "color" },
+      "50": { "value": "#eff6ff", "type": "color" },
+      "100": { "value": "#dbeafe", "type": "color" },
+      "200": { "value": "#bfdbfe", "type": "color" },
+      "300": { "value": "#93c5fd", "type": "color" },
+      "400": { "value": "#60a5fa", "type": "color" },
+      "500": { "value": "#3b82f6", "type": "color" },
+      "600": { "value": "#2563eb", "type": "color" },
+      "700": { "value": "#1d4ed8", "type": "color" },
+      "800": { "value": "#1e40af", "type": "color" },
+      "900": { "value": "#1e3a8a", "type": "color" },
+      "950": { "value": "#172554", "type": "color" }
+    },
+    "secondary": {
+      "base": { "value": "#7c3aed", "type": "color" },
+      "50": { "value": "#f5f3ff", "type": "color" },
+      "100": { "value": "#ede9fe", "type": "color" },
+      "200": { "value": "#ddd6fe", "type": "color" },
+      "300": { "value": "#c4b5fd", "type": "color" },
+      "400": { "value": "#a78bfa", "type": "color" },
+      "500": { "value": "#8b5cf6", "type": "color" },
+      "600": { "value": "#7c3aed", "type": "color" },
+      "700": { "value": "#6d28d9", "type": "color" },
+      "800": { "value": "#5b21b6", "type": "color" },
+      "900": { "value": "#4c1d95", "type": "color" },
+      "950": { "value": "#2e1065", "type": "color" }
+    },
+    "neutral": {
+      "base": { "value": "#64748b", "type": "color" },
+      "50": { "value": "#f8fafc", "type": "color" },
+      "100": { "value": "#f1f5f9", "type": "color" },
+      "500": { "value": "#64748b", "type": "color" },
+      "900": { "value": "#0f172a", "type": "color" }
+    }
+  },
+  "borderRadius": {
+    "none": { "value": "0px", "type": "dimension" },
+    "sm": { "value": "2px", "type": "dimension" },
+    "md": { "value": "6px", "type": "dimension" },
+    "lg": { "value": "8px", "type": "dimension" },
+    "full": { "value": "9999px", "type": "dimension" }
+  },
+  "spacing": {
+    "xs": { "value": "4px", "type": "dimension" },
+    "sm": { "value": "8px", "type": "dimension" },
+    "md": { "value": "16px", "type": "dimension" },
+    "lg": { "value": "24px", "type": "dimension" },
+    "xl": { "value": "32px", "type": "dimension" }
+  }
+}
