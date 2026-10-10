@@ -61,8 +61,9 @@ export class SideMenu {
     document.documentElement.style.setProperty("--menu-color-before", `var(--color-${this.baseColor}-500, #3b82f6)`);
   }
 
-  renderMenu(menuData = []) {
+  renderMenu(menuData = [], maxDepth = 4) {
     this.container.innerHTML = "";
+    this.maxDepth = Number(maxDepth) || 4;
 
     const nav = document.createElement("nav");
     nav.className = "w-full max-w-[320px] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-2 font-sans select-none shadow-sm";
@@ -73,7 +74,7 @@ export class SideMenu {
     menuData.forEach((menu, index) => {
       // 첫 번째 메뉴(Dashboard)를 기본 활성화 상태로 열기
       const isDefaultOpen = index === 0;
-      rootUl.appendChild(this.createRootMenuItem(menu, isDefaultOpen));
+      rootUl.appendChild(this.createRootMenuItem(menu, isDefaultOpen, this.maxDepth));
     });
 
     nav.appendChild(rootUl);
@@ -81,11 +82,11 @@ export class SideMenu {
   }
 
   // 1depth 메뉴 항목 (사용자 원래 방식의 버튼 & 우측 화살표 구조)
-  createRootMenuItem(menu, isDefaultOpen = false) {
+  createRootMenuItem(menu, isDefaultOpen = false, maxDepth = 4) {
     const li = document.createElement("li");
     li.className = `root-menu-item w-full flex flex-col ${isDefaultOpen ? 'is-open' : ''}`;
 
-    const hasChildren = menu.children && menu.children.length > 0;
+    const hasChildren = maxDepth > 1 && Array.isArray(menu.children) && menu.children.length > 0;
 
     const headerBtn = document.createElement("div");
     headerBtn.className = [
@@ -95,21 +96,20 @@ export class SideMenu {
 
     // 텍스트 라벨
     const titleSpan = document.createElement("span");
-    titleSpan.className = "font-medium tracking-tight text-left";
+    titleSpan.className = "font-medium tracking-tight text-left flex-1";
     titleSpan.textContent = menu.label || menu.name || "Menu";
     headerBtn.appendChild(titleSpan);
 
-    // 화살표 아이콘 (> 또는 v)
-    const iconSpan = document.createElement("span");
-    iconSpan.className = `arrow-icon ml-2 text-xs transition-transform duration-300 ${isDefaultOpen ? 'text-white rotate-90' : ''}`;
-    iconSpan.innerHTML = '<i class="fas fa-angle-right"></i>';
-    headerBtn.appendChild(iconSpan);
-
-    li.appendChild(headerBtn);
-
-    // 하위 서브메뉴 영역
     if (hasChildren) {
-      // CSS Grid 0fr -> 1fr 기법을 이용한 GPU 가속 초고속 무지연 애니메이션 패널
+      // 화살표 아이콘 (> 또는 v)
+      const iconSpan = document.createElement("span");
+      iconSpan.className = `arrow-icon ml-2 text-xs transition-transform duration-300 ${isDefaultOpen ? 'text-white rotate-90' : ''}`;
+      iconSpan.innerHTML = '<i class="fas fa-angle-right"></i>';
+      headerBtn.appendChild(iconSpan);
+
+      li.appendChild(headerBtn);
+
+      // 하위 서브메뉴 영역
       const panel = document.createElement("div");
       panel.className = [
         "submenu-panel grid transition-[grid-template-rows,opacity] duration-300 ease-in-out",
@@ -124,7 +124,7 @@ export class SideMenu {
       subContainer.className = `${this.theme.subContainerBg} rounded-md p-1.5 my-1 space-y-0.5`;
 
       menu.children.forEach((child) => {
-        subContainer.appendChild(this.createSubmenuItem(child, 2));
+        subContainer.appendChild(this.createSubmenuItem(child, 2, maxDepth));
       });
 
       innerWrapper.appendChild(subContainer);
@@ -134,6 +134,25 @@ export class SideMenu {
       headerBtn.addEventListener("click", (e) => {
         e.preventDefault();
         this.toggleRootMenu(li);
+      });
+    } else {
+      li.appendChild(headerBtn);
+
+      // 하위가 없는 단독 1depth 메뉴인 경우 클릭 시 바로 선택 처리
+      headerBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const parentUl = li.parentElement;
+        if (parentUl) {
+          parentUl.querySelectorAll(".root-menu-item").forEach((otherLi) => {
+            if (otherLi !== li) this.closeRootPanel(otherLi);
+          });
+          parentUl.querySelectorAll(".root-btn").forEach((btn) => {
+            this.theme.rootActive.split(" ").forEach(c => btn.classList.remove(c));
+            this.theme.rootInactive.split(" ").forEach(c => btn.classList.add(c));
+          });
+        }
+        this.theme.rootInactive.split(" ").forEach(c => headerBtn.classList.remove(c));
+        this.theme.rootActive.split(" ").forEach(c => headerBtn.classList.add(c));
       });
     }
 
@@ -202,20 +221,20 @@ export class SideMenu {
   }
 
   // 2, 3, 4 depth 서브메뉴 항목 (사용자 원래 좌측 4px 막대 바 & + 아이콘 방식)
-  createSubmenuItem(item, depth = 2) {
+  createSubmenuItem(item, depth = 2, maxDepth = 4) {
     const wrapper = document.createElement("div");
     wrapper.className = "w-full flex flex-col";
 
-    const hasChildren = item.children && item.children.length > 0;
+    const hasChildren = depth < maxDepth && Array.isArray(item.children) && item.children.length > 0;
 
     const row = document.createElement("div");
     row.className = [
-      "sub-row group relative flex items-center justify-between py-2.5 pr-3 text-xs rounded cursor-pointer transition-colors duration-150 overflow-hidden",
+      "sub-row group relative flex items-center justify-between py-2 pr-3 text-xs rounded cursor-pointer transition-colors duration-150 overflow-hidden",
       this.theme.subItemDefault,
     ].join(" ");
 
-    // 뎁스별 들여쓰기 (왼쪽에서 깔끔하게 계층 정렬)
-    const indentLeft = (depth - 2) * 16 + 14;
+    // 뎁스별 들여쓰기 (1depth당 14px씩 계층적으로 들여쓰기)
+    const indentLeft = (depth - 2) * 14 + 14;
     row.style.paddingLeft = `${indentLeft}px`;
 
     // 사용자 원래 디자인의 좌측 4px 컬러 바 (호버 및 활성 시 세로로 차오름)
@@ -223,9 +242,16 @@ export class SideMenu {
     leftBar.className = `left-indicator absolute left-0 top-0 bottom-0 w-1 transition-all duration-200 ${this.theme.barColor} h-0 group-hover:h-full`;
     row.appendChild(leftBar);
 
-    // 텍스트 라벨 (배경과 뚜렷한 대비로 텍스트 가독성 100% 확보)
+    // 4depth 구분 불릿 포인트 (최하위 깊이 시각적 인디케이터)
+    if (depth >= 4) {
+      const dot = document.createElement("span");
+      dot.className = "w-1 h-1 rounded-full bg-slate-400 dark:bg-slate-500 mr-1.5 flex-shrink-0 group-hover:scale-125 transition-transform";
+      row.appendChild(dot);
+    }
+
+    // 텍스트 라벨 (배경과 뚜렷한 대비로 텍스트 가독성 확보)
     const titleSpan = document.createElement("span");
-    titleSpan.className = "menu-text font-medium truncate flex-1 tracking-tight select-none";
+    titleSpan.className = `menu-text truncate flex-1 tracking-tight select-none ${depth >= 4 ? 'text-[11px] text-slate-600 dark:text-slate-300' : 'font-medium'}`;
     titleSpan.textContent = item.label || item.name || "Submenu";
     row.appendChild(titleSpan);
 
@@ -244,7 +270,7 @@ export class SideMenu {
       childInner.className = "overflow-hidden";
 
       item.children.forEach((child) => {
-        childInner.appendChild(this.createSubmenuItem(child, depth + 1));
+        childInner.appendChild(this.createSubmenuItem(child, depth + 1, maxDepth));
       });
 
       childPanel.appendChild(childInner);
